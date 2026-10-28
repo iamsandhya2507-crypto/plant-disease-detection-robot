@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Plant Health Demo</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><main class="container"><p class="eyebrow">AGRI-TECH SOFTWARE DEMO</p><h1>Plant Health & Robot Simulation</h1>
+<p>Upload a leaf photo to test the workflow. This starter does not include a trained disease model.</p>
+<form method="post" enctype="multipart/form-data"><label for="leaf_image">Leaf image (PNG, JPG, JPEG, WEBP; max 5 MB)</label><input id="leaf_image" name="leaf_image" type="file" accept=".png,.jpg,.jpeg,.webp" required><button type="submit">Submit image</button></form>
+{% if message %}<section class="notice"><h2>Demo result</h2><p>{{ message }}</p></section>{% endif %}
+<section class="notice"><h2>Robot decision (simulation)</h2><p>{{ robot_message }}</p></section>
+<p class="warning"><strong>Safety:</strong> This app does not diagnose disease or control a real robot. Do not use it to make pesticide decisions.</p><footer>Python + Flask · Educational prototype</footer></main></body></html>
